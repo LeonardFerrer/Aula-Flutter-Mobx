@@ -1,4 +1,4 @@
-import 'package:aula_mobx/home_page.dart';
+import 'package:aula_mobx/aula1/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

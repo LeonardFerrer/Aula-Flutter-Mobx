@@ -1,9 +1,8 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:aula_mobx/aula1/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-
-import 'controller.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
