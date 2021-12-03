@@ -53,4 +53,7 @@ abstract class _ControllerBase with Store {
     }
     return null;
   }
+
+  /// Lógica para quando a tela for descartada
+  dispose() {}
 }
