@@ -4,9 +4,10 @@ Projeto dedicado ao aprendizado de gerenciamento de estado com o MobX no Flutter
 
 ## Formulários Reativos
 
+### Configurações iniciais
 Para o gerenciamento do codigo do Mobx, há duas opções:
-- Usar o comando **flutter pub run build_runner watch** para monitora as alterações;
-- **flutter pub run build_runner build** para realizar uma unica montagem do projeto; 
+- Usar o comando `flutter pub run build_runner watch` para monitora as alterações;
+- `flutter pub run build_runner build` para realizar uma unica montagem do projeto; 
 - Usar a extensão **mobxcodegen** para automatizar a compilação e geração dos arquivos **.g.dart**.
 
 Independente do meio escolhido há necessidade de estar instalado nas dependecias do projeto o [build_runner](https://pub.dev/packages/build_runner) e o [mobx_codegen](https://pub.dev/packages/mobx_codegen).
@@ -14,6 +15,45 @@ Independente do meio escolhido há necessidade de estar instalado nas dependecia
 Para usar snippets personalizados para facilitar o desenvolvimento, há duas opções:
 - Criar seus próprios snippets;
 - Usar a extensão **flutter-mobx**.
+
+### Primeiro Model
+Para iniciar os primeiros passos com o MobX iremos criar um Model, classe que representa as caracteristicas de um objeto. Em nosso projeto iremos criar um model de **client**, contituido de três caractéricas: nome, cpf, email:
+``` dart
+Client{
+    String nome;
+    String cpf;
+    String email;
+}
+```
+
+Para criar uma classe reativa utilizaremos o Mobx e utilizaremos nosso model. Primeiro crie um novo arquivo denominado **client.dart** e adicione:
+```dart
+import 'package:mobx/mobx.dart';
+part '<classe>.g.dart';
+
+class <classe> = _<classe>Base with _$<classe>;
+
+abstract class _<classe>Base with Store {
+
+}
+```
+
+substitua os **<classe>** pelo nome da classe que irá criar, no nosso caso será **client**:
+```dart
+import 'package:mobx/mobx.dart';
+part 'client.g.dart';
+
+class Client = _ClientBase with _$Client;
+
+abstract class _ClientBase with Store {
+
+}
+```
+
+Ao adicioanr o trecho acima, notará que o editor irá apontar um erro em `part 'client.g.dart'`, esse arquivio é gerado automaticamente pelo mobx mas antes você deverá exceutar o seguinte comando para a geração do **.g.dart**:
+```
+flutter pub run build_runner build
+```
 
 
 ## Provendo código com o Provider
