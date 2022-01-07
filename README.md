@@ -11,6 +11,19 @@ Para o gerenciamento do codigo do Mobx, há duas opções:
 - Usar a extensão **mobxcodegen** para automatizar a compilação e geração dos arquivos **.g.dart**.
 
 Independente do meio escolhido há necessidade de estar instalado nas dependecias do projeto o [build_runner](https://pub.dev/packages/build_runner) e o [mobx_codegen](https://pub.dev/packages/mobx_codegen).
+```dart
+dependencies:
+    flutter:
+        sdk: flutter
+    mobx: ^2.0.5
+    flutter_mobx: ^2.0.3+2
+ 
+ dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mobx_codegen: ^2.0.5+2
+  build_runner: ^2.1.7
+```
 
 Para usar snippets personalizados para facilitar o desenvolvimento, há duas opções:
 - Criar seus próprios snippets;
